@@ -21,8 +21,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "preferred-install": "dist",
+        "allow-plugins": {
+            "sweetchuck/git-hooks": true
+        },
         "optimize-autoloader": true,
+        "preferred-install": "dist",
         "sort-packages": true
     },
     "repositories": {

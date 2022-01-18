@@ -11,21 +11,25 @@ namespace Sweetchuck\EnvVarStorage;
 abstract class BaseStorage implements EnvVarStorageInterface
 {
     // region ArrayAccess
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return $this->has($offset);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->get($offset);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->putAssoc($offset, $value);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         $this->put($offset);
@@ -33,6 +37,7 @@ abstract class BaseStorage implements EnvVarStorageInterface
     // endregion
 
     // region Countable
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->getAll());
